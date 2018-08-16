@@ -1997,7 +1997,9 @@ final class UTF8
    */
   public static function intlChar_loaded(): bool
   {
-    return \class_exists('IntlChar');
+    
+    return \class_exists('IntlChar', false);
+    
   }
 
   /**
@@ -2220,7 +2222,7 @@ final class UTF8
     if (
         $strict === true
         &&
-        \class_exists('finfo')
+        \class_exists('finfo', false)
     ) {
 
       $finfo = new \finfo(FILEINFO_MIME_ENCODING);
